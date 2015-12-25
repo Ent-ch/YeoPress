@@ -7,13 +7,20 @@
         <meta charset="<?php bloginfo( 'charset' ) ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
-        <title><?php wp_title( '|', true, 'right' ) ?></title>
+        <title><?php bloginfo('name') ?> <?php wp_title() ?></title>
 		<meta name="author" content="">
 		<link rel="author" href="">
 		<?php wp_head() ?>
     </head>
     <body <?php body_class() ?>>
 		<header id="page-header">
+			<div class="logo">
+				
+				<a href="<?php bloginfo('url') ?>">
+					<!-- <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"> -->
+				</a>
+			</div>
+
 			<h1 id="page-logo">
 				<?php if (!is_front_page()): ?>
 					<a href="<?php bloginfo('url') ?>" title="<?php bloginfo('name') ?> - <?php bloginfo('description') ?>">
@@ -31,4 +38,5 @@
 				'container_id'   => 'primary-nav'
 			)) ?>
 		</header>
+		<?php // get_template_part('block', 'menu'); ?>
 		<div id="content-wrap">
